@@ -1,0 +1,1618 @@
+
+/* ======== BOHO HERO SECTION ======== */
+
+.bg-c {
+  background-image: url("../src/img/hero-bg1772087983025-Bz50w0HS.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 800px;
+  margin: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* فیلتر گرم بوهو */
+  filter: brightness(0.93) contrast(1.05) saturate(0.85);
+
+  /* لایه بافت بوهو */
+  position: relative;
+}
+
+.bg-c::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../src/img/boho-texture.png");
+  opacity: 0.12;
+}
+
+/* ======== TITLE ======== */
+
+#home-titel-welcome {
+  font-size: 48px;
+  font-weight: 600;
+  color: #4b3a2c;
+  position: relative;
+  letter-spacing: 1px;
+  font-family: "Cormorant Garamond", serif;
+  z-index: 2;
+  background-color: #eed3b9da;
+  border-radius: 60px;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+#home-titel-welcome span::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background: #c8a27b; /* کرم قهوه‌ای روشن */
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  border-radius: 2px;
+}
+
+/* عنوان کوچک */
+#mm {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 25px 0;
+  color: #7b5e47;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+}
+
+/* ======== SEARCH BAR ======== */
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto;
+  z-index: 2;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #fffdf8;
+  border-radius: 35px;
+  padding: 12px 20px;
+  box-shadow: 0 4px 20px rgba(84, 59, 34, 0.15);
+  transition: 0.3s ease;
+  border: 1px solid #e5d6c7;
+}
+
+.search-box:focus-within {
+  box-shadow: 0 6px 25px rgba(84, 59, 34, 0.25);
+}
+
+.search-box input[type="text"] {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  background: transparent;
+  color: #4b3a2c;
+  font-family: "Poppins", sans-serif;
+}
+
+.search-box input[type="text"]::placeholder {
+  color: #b7a08a;
+}
+
+.search-box button {
+  padding: 10px 24px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(135deg, #d3c1a7, #b59677);
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.search-box button:hover {
+  background: linear-gradient(135deg, #bfa68b, #a98766);
+}
+
+/* ======== ANIMATION ======== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======== RESPONSIVE ======== */
+
+@media (max-width: 768px) {
+  #home-titel-welcome {
+    font-size: 32px;
+  }
+
+  #mm {
+    font-size: 24px;
+  }
+
+  .bg-c {
+    height: 600px;
+  }
+}
+
+/* ======== BOHO RESULTS DROPDOWN ======== */
+
+.results-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+
+  background-color: #fffdf8; /* کرم روشن گرم */
+  border-radius: 14px;
+  border: 1px solid #e7d8c9; /* خط بوهو نرم */
+  
+  box-shadow: 0 6px 25px rgba(84, 59, 34, 0.18);
+  margin-top: 10px;
+
+  max-height: 320px;
+  overflow-y: auto;
+
+  padding: 12px 0;
+  z-index: 20;
+
+  backdrop-filter: blur(3px); /* افکت شیشه‌ای گرم */
+}
+
+/* ——— scrollbar boho ——— */
+.results-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.results-list::-webkit-scrollbar-thumb {
+  background: #c8a27b;
+  border-radius: 10px;
+}
+
+.results-list::-webkit-scrollbar-track {
+  background: #f2e7db;
+}
+
+/* ======== RESULT ITEM ======== */
+
+.results-list .item {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+
+  cursor: pointer;
+
+  transition: background-color 0.25s ease, transform 0.15s ease;
+  border-bottom: 1px solid #f0e6d9;
+}
+
+.results-list .item:last-child {
+  border-bottom: none;
+}
+
+.results-list .item:hover {
+  background-color: #f7efe6;
+  transform: translateX(-3px);
+}
+
+/* ======== THUMBNAIL ======== */
+
+.results-list .item img {
+  width: 55px;
+  height: 55px;
+
+  border-radius: 10px;
+  object-fit: cover;
+
+  margin-left: 18px;
+  flex-shrink: 0;
+
+  box-shadow: 0 2px 8px rgba(90, 60, 30, 0.15);
+}
+
+/* ======== ITEM TEXT ======== */
+
+.results-list .item-details {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.results-list .item-details .title {
+  font-weight: 600;
+  font-size: 16px;
+  color: #4b3a2c;
+
+  margin-bottom: 5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.results-list .item-details .price {
+  font-size: 14px;
+  color: #8b6f56;
+  font-family: "Cormorant Garamond", serif;
+}
+
+
+/* ======== BOHO HEADER SECTION ======== */
+.bg-c {
+  background-color: #f5eada; /* کرم خیلی روشن و گرم */
+  padding: 25px 20px;
+  text-align: center;
+  border-radius: 0 0 25px 25px; /* گوشه‌های گردتر و نرم‌تر */
+  border-bottom: 2px solid #d1bba8; /* خط مرزی بوهو */
+}
+
+#home-titel-welcome {
+  font-size: 32px; /* کمی بزرگتر برای هدر */
+  color: #5a4231; /* قهوه‌ای گرمتر */
+  margin-top: 30px;
+  font-weight: 700; /* وزن بیشتر برای عنوان */
+  font-family: "Cormorant Garamond", serif; /* فونت کلاسیک boho */
+}
+
+#home-titel-welcome span {
+  color: #a07d5a; /* رنگ قهوه‌ای شتری برای تاکید */
+}
+
+/* خط زیر عنوان */
+#mm::after {
+  content: "";
+  width: 90px;
+  height: 4px;
+  background-color: #c8a27b; /* کرم مایل به طلایی */
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* ======== BOHO BUTTONS ======== */
+.aa {
+  margin: auto;
+  text-align: center;
+}
+
+.btn-select {
+  display: inline-flex; /* استفاده از flex برای چینش بهتر */
+  align-items: center;
+  justify-content: center;
+  margin: 15px 5px; /* فاصله بیشتر بین دکمه‌ها */
+  padding: 10px 22px; /* کمی padding بیشتر */
+
+  border-radius: 25px; /* گردتر */
+  border: 2px solid #8b6f56; /* مرز قهوه‌ای متوسط */
+  background-color: #fffdf8; /* پس‌زمینه کرم روشن */
+  color: #8b6f56; /* متن قهوه‌ای متوسط */
+  
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif; /* فونت خواناتر */
+  
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transition نرم‌تر */
+  box-shadow: 0 3px 10px rgba(90, 60, 30, 0.1); /* سایه ملایم */
+}
+
+/* hover */
+.btn-select:hover {
+  background-color: #8b6f56; /* قهوه‌ای تیره */
+  color: white;
+  transform: translateY(-3px) scale(1.03); /* کمی بزرگتر و بالاتر */
+  box-shadow: 0 6px 15px rgba(90, 60, 30, 0.2);
+}
+
+/* وقتی دکمه فعاله */
+.btn-select.active {
+  background-color: #8b6f56; /* قهوه‌ای تیره */
+  color: white;
+  border: none; /* حذف border وقتی فعاله */
+  transform: translateY(-3px) scale(1.03); /* مثل hover */
+  box-shadow: 0 6px 15px rgba(90, 60, 30, 0.2);
+}
+
+
+/* ======== BOHO PRODUCT CARDS ======== */
+.cw {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); /* کمی بزرگتر */
+  gap: 25px; /* فاصله بیشتر بین کارت‌ها */
+  padding: 25px 0;
+}
+
+/* کارت محصول */
+.bw {
+
+  background: #fffdf8; /* کرم روشن */
+  border-radius: 18px; /* گردتر */
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(90, 60, 30, 0.12); /* سایه با رنگ بوهو */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  display: flex; /* استفاده از flex برای چینش داخلی */
+  flex-direction: column; /* عمودی */
+}
+
+.bw:hover {
+  background-color: #d9c6b5; /* کرم تیره تر */
+  transform: translateY(-10px) scale(1.02); /* حرکت بیشتر */
+  box-shadow: 0 15px 30px rgba(90, 60, 30, 0.2);
+}
+
+/* تصویر */
+.pi {
+  width: 90%; /* پر کردن عرض کارت */
+  height: 220px; /* ارتفاع بیشتر */
+  object-fit: cover;
+  display: block;
+   /* حذف فضای اضافه زیر تصویر */
+   border-radius:60px ;
+}
+
+/* اطلاعات محصول */
+.product-info {
+ 
+  padding: 10px;
+  flex-grow: 1; /* اجازه رشد به اطلاعات */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* پراکنده کردن محتوا */
+}
+
+.product-info h4 {
+  margin: 0 0 10px;
+
+  font-size: 19px;
+  color: #5a4231; /* قهوه ای تیره */
+  font-weight: 700;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.product-info p {
+  font-size: 14.5px;
+  color: #777;
+  margin-bottom: 15px;
+  min-height: 40px; /* حفظ حداقل ارتفاع */
+  line-height: 1.5; /* خوانایی بهتر */
+  font-family: "Poppins", sans-serif;
+}
+
+/* قیمت */
+.product-info .price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #a07d5a; /* شتری */
+  margin-top: auto; /* رفتن به پایین */
+}
+
+/* ======== GLOBAL BOHO STYLES ======== */
+:root {
+  --color-primary: #8b6f56; /* قهوه ای متوسط */
+  --color-secondary: #a07d5a; /* شتری */
+  --color-accent: #c19a6b; /* طلایی کافه ای */
+  --color-background-light: #f5eada; /* کرم روشن */
+  --color-background-dark: #cab0a0; /* قهوه ای تیره */
+  --color-text-dark: #5a4231; /* قهوه ای تیره */
+  --color-text-light: #e8dccb; /* کرم روشن */
+  --color-text-muted: #777; /* خاکستری */
+  --font-primary: 'Cormorant Garamond', serif; /* کلاسیک و لوکس */
+  --font-secondary: 'Poppins', sans-serif; /* مدرن و خوانا */
+  --transition-smooth: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ======== BOHO HEADER SECTION ======== */
+.bg-c {
+  display: block;
+  background-color: var(--color-background-light);
+  padding: 40px 25px; /* کمی padding بیشتر */
+  text-align: center;
+  border-radius: 0 0 30px 30px; /* گوشه های گردتر */
+  border-bottom: 3px solid var(--color-accent); /* مرز ضخیم تر */
+  box-shadow: 0 5px 15px rgba(90, 60, 30, 0.08); /* سایه ملایم */
+}
+
+#home-titel-welcome {
+  font-size: 36px; /* بزرگتر */
+  color: var(--color-text-dark);
+  margin-top: 400%;
+  margin-bottom: 600px;
+  /* فاصله بیشتر */
+  font-weight: 700;
+  font-family: var(--font-primary);
+  letter-spacing: 0.5px; /* فاصله حروف */
+}
+
+#home-titel-welcome span {
+  color: var(--color-secondary);
+  margin-bottom: 600px;
+}
+
+#mm::after {
+  content: "";
+  width: 100px; /* عریض تر */
+  height: 5px; /* ضخیم تر */
+  background-color: var(--color-accent);
+  display: block;
+  margin: 150px auto 0;
+  border-radius: 3px;
+}
+
+/* ======== BOHO BUTTONS ======== */
+.aa {
+  margin: 30px auto; /* مرکز چین و فاصله بیشتر */
+  text-align: center;
+}
+
+.btn-select {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 6px; /* فاصله کمتر بین دکمه ها */
+  padding: 12px 25px; /* padding بزرگتر */
+  border-radius: 30px; /* کاملا گرد */
+  border: 2px solid var(--color-primary);
+  background-color: white;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-size: 16px; /* بزرگتر */
+  font-weight: 600;
+  font-family: var(--font-secondary);
+  transition: all 0.4s var(--transition-smooth);
+  box-shadow: 0 4px 12px rgba(90, 60, 30, 0.15); /* سایه قوی تر */
+}
+
+.btn-select:hover {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(90, 60, 30, 0.25); /* سایه پررنگ تر */
+}
+
+.btn-select.active {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(90, 60, 30, 0.25);
+}
+
+/* ======== BOHO PRODUCT CARDS ======== */
+.cw {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* کمی عریض تر */
+  gap: 30px; /* فاصله بیشتر */
+  padding: 30px 0;
+}
+
+.bw {
+  background: white;
+  border-radius: 20px; /* گردتر */
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(90, 60, 30, 0.15); /* سایه قوی تر */
+  transition: all 0.4s var(--transition-smooth);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.bw:hover {
+  background-color: var(--color-background-light); /* کرم روشن */
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 18px 35px rgba(90, 60, 30, 0.25); /* سایه خیلی پررنگ */
+}
+
+.product-img {
+  width: 80%;
+  height: 250px; /* بلندتر */
+  object-fit: cover;
+  display: block;
+}
+
+.product-info {
+  padding: 25px; /* padding بیشتر */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-info h4 {
+  margin: 0 0 12px; /* فاصله بیشتر */
+  font-size: 20px; /* بزرگتر */
+  color: var(--color-text-dark);
+  font-weight: 700;
+  font-family: var(--font-primary);
+}
+
+.product-info p {
+  font-size: 15px; /* بزرگتر */
+  color: var(--color-text-muted);
+  margin-bottom: 18px; /* فاصله بیشتر */
+  line-height: 1.6; /* خوانایی بهتر */
+  font-family: var(--font-secondary);
+}
+
+/* قیمت */
+.product-info .price {
+  font-size: 18px; /* بزرگتر */
+  font-weight: bold;
+  color: var(--color-secondary);
+  margin-top: auto;
+  font-family: var(--font-secondary);
+}
+
+/* ======== BOHO PRODUCT INFO DETAILS ======== */
+.product-info strong {
+  display: block;
+  color: var(--color-primary);
+  font-size: 17px;
+  margin-bottom: 10px; /* فاصله بیشتر */
+  font-family: var(--font-secondary);
+  font-weight: 600;
+}
+
+.product-info small {
+  color: #b0b0b0; /* خاکستری روشن تر */
+  font-size: 13.5px; /* کمی بزرگتر */
+  line-height: 1.5;
+  font-family: var(--font-secondary);
+}
+
+.item-dc {
+  font-size: 11.5px; /* کمی بزرگتر */
+  color: #888; /* خاکستری تیره تر */
+  font-style: italic;
+}
+
+/* ======== BOHO FOOTER ======== */
+.footer {
+  background: var(--color-background-dark);
+  color: var(--color-text-light);
+  padding: 70px 30px; /* padding بسیار بیشتر */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px; /* فاصله بیشتر */
+  border-top: 4px solid var(--color-accent); /* مرز ضخیم و طلایی */
+  box-shadow: 0 -8px 25px rgba(58, 42, 32, 0.2); /* سایه بالای فوتر */
+}
+
+.so {
+  flex: 1.8; /* فضای بیشتر */
+  min-width: 300px;
+  padding-right: 40px;
+}
+
+.f-titel {
+  font-size: 34px; /* بزرگتر */
+  font-weight: 700;
+  margin-bottom: 25px; /* فاصله بیشتر */
+  color: var(--color-text-light);
+  font-family: var(--font-primary);
+  letter-spacing: 0.8px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.2); /* سایه متن */
+}
+
+.add {
+  font-size: 16.5px; /* بزرگتر */
+  line-height: 2.0; /* فاصله خط زیاد */
+  margin-bottom: 18px; /* فاصله بیشتر */
+  color: #d1bba8;
+  font-family: var(--font-secondary);
+}
+
+.phone {
+  font-size: 15.5px; /* بزرگتر */
+  color: #d1bba8;
+  font-family: var(--font-secondary);
+}
+
+.phone a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: color 0.3s var(--transition-smooth);
+}
+.phone a:hover {
+  color: var(--color-accent); /* طلایی */
+}
+
+.location {
+  flex: 1.2; /* فضای متوسط */
+  min-width: 280px;
+  background: #4a3528;
+  border-radius: 18px; /* گردتر */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px; /* بزرگتر */
+  color: var(--color-text-light);
+  padding: 30px; /* padding بیشتر */
+  transition: all 0.4s var(--transition-smooth);
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0 6px 20px rgba(58, 42, 32, 0.2); /* سایه ملایم */
+}
+
+.location:hover {
+  background: #5a4231;
+  transform: translateY(-9px); /* حرکت بیشتر */
+  box-shadow: 0 12px 30px rgba(58, 42, 32, 0.3); /* سایه پررنگ تر */
+}
+
+/* ----- MAIN HEADER TITLE (for consistency) ----- */
+#home-titel-welcome {
+  height: auto;
+  padding: 20px 0;
+  font-size: 50px; /* بزرگتر */
+  color: var(--color-text-dark);
+  margin-top: 50px; /* فاصله بیشتر */
+  margin-bottom: 50px; /* فاصله بیشتر */
+}
+
+#home-titel-welcome span {
+  color: var(--color-secondary);
+}
+
+#home-titel-welcome span::after {
+  content: "";
+  height: 6px; /* ضخیم تر */
+  background: var(--color-accent);
+  position: absolute;
+  left: 0;
+  bottom: -12px; /* پایین تر */
+  border-radius: 3px;
+  width: 100%;
+  display: block;
+}
+
+/* ======== ANIMATIONS ======== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px); /* حرکت بیشتر */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#home-titel-welcome {
+  animation: fadeUp 1.5s ease-out forwards; /* انیمیشن طولانی تر */
+}
+
+/* انیمیشن برای هاور روی دکمه ها و کارت ها */
+@keyframes subtleGlow {
+  from { box-shadow: 0 4px 12px rgba(90, 60, 30, 0.15); }
+  to { box-shadow: 0 8px 20px rgba(90, 60, 30, 0.25); transform: translateY(-3px); }
+}
+
+.btn-select:hover {
+  animation: subtleGlow 0.6s var(--transition-smooth) forwards;
+}
+
+.bw:hover {
+  animation: subtleGlow 0.6s var(--transition-smooth) forwards;
+  animation-name: subtleGlowHover; /* اسم جدید برای هاور کارت */
+}
+
+@keyframes subtleGlowHover {
+  from { box-shadow: 0 12px 30px rgba(90, 60, 30, 0.15); transform: translateY(-10px); }
+  to { box-shadow: 0 18px 35px rgba(90, 60, 30, 0.25); transform: translateY(-10px) scale(1.03); }
+}
+
+
+
+
+:root {
+  --coffee-dark: #3e2723; /* قهوه ای تیره - اصلی */
+  --coffee-accent: #b99470; /* قهوه ای طلایی - تاکیدی */
+  --coffee-light-bg: #f5eada; /* کرم روشن - پس زمینه */
+  --coffee-text-muted: #777; /* خاکستری - متن کم اهمیت */
+  --font-main: 'Poppins', sans-serif; /* فونت اصلی و مدرن */
+  --font-title: 'Playfair Display', serif; /* فونت عناوین (اختیاری) */
+  --transition-smooth: cubic-bezier(0.25, 0.8, 0.25, 1); /* transition نرم و کمی جهشی */
+}
+
+.coffee-cart-wrapper {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-main); /* استفاده از فونت اصلی */
+  background-color: var(--coffee-light-bg); /* پس زمینه کرم */
+  padding: 12px 18px; /* padding بیشتر */
+  border-radius: 30px; /* گردتر */
+  box-shadow: 0 5px 20px rgba(62, 39, 35, 0.1); /* سایه ملایم */
+  transition: all 0.3s var(--transition-smooth);
+}
+
+.coffee-cart-wrapper:hover {
+  box-shadow: 0 8px 25px rgba(62, 39, 35, 0.15); /* سایه قوی تر در هاور */
+  transform: translateY(-2px);
+}
+
+.cart-main-btn {
+  background-color: var(--coffee-dark);
+  color: white;
+  border: none;
+  padding: 10px 15px; /* padding بیشتر */
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex; /* تغییر به inline-flex */
+  align-items: center;
+  gap: 12px; /* فاصله بیشتر */
+  font-size: 16px; /* فونت بزرگتر */
+  font-weight: 600;
+  transition: all 0.4s var(--transition-smooth);
+  box-shadow: 0 6px 20px rgba(62, 39, 35, 0.35); /* سایه پررنگ تر */
+  white-space: nowrap; /* جلوگیری از شکستن متن */
+}
+
+.cart-main-btn:hover {
+  transform: translateY(-4px) scale(1.03); /* کمی بزرگتر شدن */
+  background-color: #2d1b18; /* قهوه ای تیره تر */
+  box-shadow: 0 10px 25px rgba(62, 39, 35, 0.4); /* سایه قوی تر */
+}
+
+.cart-icon { /* اگر آیکون سبد دارید، میتونید این استایل رو اضافه کنید */
+  font-size: 1.1em; /* کمی بزرگتر */
+}
+
+/* ----- Counter Controls ----- */
+.counter-control {
+  background: var(--coffee-accent); /* استفاده از رنگ تاکیدی */
+  border-radius: 50px;
+  padding: 8px; /* padding بیشتر */
+  margin-left: 15px; /* فاصله بیشتر */
+  display: flex; /* مطمئن شویم که فلکس است */
+  alig-items: center;
+  gap: 10px; /* فاصله کمتر بین دکمه ها */
+  animation: fadeInUp 0.5s var(--transition-smooth) forwards; /* انیمیشن ورود بهتر */
+  transform-origin: left center; /* نقطه شروع انیمیشن */
+}
+
+.counter-control button {
+  width: 40px; /* بزرگتر */
+  height: 40px; /* بزرگتر */
+  border-radius: 50%;
+  border: none;
+  background: white;
+  color: var(--coffee-dark);
+  font-weight: bold;
+  font-size: 18px; /* فونت بزرگتر */
+  cursor: pointer;
+  transition: all 0.3s var(--transition-smooth);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* سایه کوچک */
+  display: flex; /* برای وسط چین کردن آیکون */
+  align-items: center;
+  justify-content: center;
+}
+
+.counter-control button:hover {
+  background: var(--coffee-dark); /* رنگ تیره */
+  color: white;
+  transform: translateY(-2px) scale(1.1); /* کمی بالا و بزرگتر */
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2); /* سایه قوی تر */
+}
+
+#qtyText {
+  font-weight: bold;
+  color: var(--coffee-dark);
+  font-size: 18px; /* فونت بزرگتر */
+  min-width: 30px; /* فضای بیشتر */
+  text-align: center;
+}
+
+/* ----- Animations ----- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-25px) scale(0.9); /* ورود با کمی مقیاس */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* کل wrapper میتونه هاور بشه */
+.coffee-cart-wrapper:hover .cart-main-btn {
+  /*  این قسمت برای جلوه هاور تکراری است، در صورت نیاز میتواند تغییر کند */
+}
+
+/* جلوه هاور روی دکمه های شمارنده */
+.counter-control button:active { /* هنگام کلیک */
+  transform: translateY(0px) scale(1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.search-wrapper {
+  width: 80%;
+
+}
+
+/* تم قهوه لوکس - نسخه بهبود یافته */
+
+:root {
+  --coffee-dark: #4a2c2a; /* قهوه‌ای تیره */
+  --coffee-medium: #8b5e3c; /* قهوه‌ای متوسط */
+  --coffee-light: #d4bfa3; /* کرم روشن */
+  --coffee-accent: #a3876d; /* طلایی-مات - رنگ تاکید */
+  --coffee-bg: #fdfaf6; /* پس‌زمینه کرمی */
+  --coffee-text: #333; /* رنگ متن اصلی */
+
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Playfair Display', serif;
+}
+
+body {
+  background-color: var(--coffee-bg);
+  font-family: var(--font-primary);
+  color: var(--coffee-text);
+  line-height: 1.6;
+}
+
+/* Wrapper اصلی سبد خرید */
+.coffee-cart-wrapper {
+  background-color: #fff; /* پس‌زمینه سفید برای تمایز */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  max-width: 1200px;
+  margin: 40px auto;
+  overflow: hidden; /* برای جلوگیری از بیرون زدن عناصر */
+}
+
+/* عنوان اصلی صفحه */
+h1.main-title {
+  font-family: var(--font-secondary);
+  color: var(--coffee-dark);
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+/* دکمه اصلی سبد خرید */
+.cart-main-btn, .nmc {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 25px;
+  border-radius: 8px;
+  background-color: var(--coffee-accent);
+  color: #fff;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 1em;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(163, 135, 109, 0.3); /* سایه رنگ تاکید */
+}
+
+
+
+/* ===== Luxury Coffee & Green Theme (unified) ===== */
+:root {
+  --coffee-dark: #f1d09c; /* قهوه‌ای تیره */
+  --coffee-medium: #8b5e3c; /* قهوه‌ای متوسط */
+  --coffee-light: #f2e6d7; /* کرم روشن */
+  --coffee-bg: #f8f6f1; /* پس‌زمینه صفحه/کارت */
+  --coffee-green: #f3e0aa; /* سبز لجنی */
+  --coffee-green-accent: #588157; /* سبز کمی روشن‌تر برای تاکید */
+  --coffee-line: rgba(152, 125, 123, 0.12);
+  --text: #2f2a28; /* متن اصلی */
+}
+
+/* ===== Style for .cart-main-btn ===== */
+.cart-main-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 20px;
+  padding: 10px 20px;
+
+  background-color: var(--coffee-green-accent); /* استفاده از سبز */
+  color: #fff;
+
+  border: 0;
+  border-radius: 10px; /* گردتر و مدرن */
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 800;
+
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  box-shadow: 0 10px 22px rgba(88, 129, 87, 0.25); /* سایه سبز */
+}
+
+.cart-main-btn:hover {
+  background-color: var(--coffee-green); /* سبز تیره‌تر برای هاور */
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(88, 129, 87, 0.32);
+}
+
+.cart-main-btn svg {
+  stroke: #fff;
+  fill: none;
+}
+
+.cart-main-btn span {
+  font-size: 1em;
+}
+
+/* ===== Style for ShoppingCart.jsx components ===== */
+.cart-box {
+  font-family: 'IRANSans', sans-serif;
+  width: 90%;
+  max-width: 720px;
+  margin: 20px auto;
+
+  padding: 24px;
+
+  border: 1px solid var(--coffee-line);
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(74, 44, 42, 0.08); /* سایه ملایم قهوه‌ای */
+
+  background: linear-gradient(180deg, #ffffff 0%, var(--coffee-bg) 100%); /* پس‌زمینه کرم */
+  direction: rtl;
+}
+
+.cart-box h3 {
+  text-align: center;
+  color: var(--coffee-dark); /* قهوه‌ای تیره */
+  margin-bottom: 22px;
+  font-size: 26px;
+  font-weight: 900;
+
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(88, 129, 87, 0.25); /* خط سبز */
+}
+
+/* هر آیتم سبد */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(74, 44, 42, 0.08); /* خط جداکننده ملایم */
+
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item:hover {
+  background-color: rgba(88, 129, 87, 0.06); /* هاور با رنگ سبز ملایم */
+  transform: translateY(-1px);
+}
+
+/* تصویر محصول */
+.cart-item img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+
+  border-radius: 12px;
+  margin-left: 16px;
+  border: 1px solid rgba(74, 44, 42, 0.08);
+}
+
+/* عنوان محصول */
+.cart-item span:nth-child(2) { /* فرض بر اینکه این تگ مربوط به عنوان محصول است */
+  flex-grow: 1;
+  font-size: 16px;
+  color: #3a3533; /* رنگ متن تیره */
+  margin: 0 10px;
+  font-weight: 700;
+}
+
+/* کنترلر تعداد (مثبت و منفی) */
+.cart-controls {
+  display: inline-flex;
+  align-items: center;
+
+  border: 1px solid rgba(74, 44, 42, 0.18);
+  border-radius: 12px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.7); /* پس‌زمینه کمی شفاف */
+}
+
+.cart-controls button {
+  background-color: transparent;
+  border: none;
+
+  font-size: 20px;
+  padding: 6px 14px;
+  cursor: pointer;
+
+  color: var(--coffee-medium); /* قهوه‌ای متوسط */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cart-controls button:hover {
+  background-color: rgba(88, 129, 87, 0.14); /* هاور دکمه با سبز ملایم */
+  color: var(--coffee-green-accent);
+}
+
+.cart-controls button:disabled {
+  color: rgba(74, 44, 42, 0.35);
+  cursor: not-allowed;
+}
+
+.cart-controls span { /* تعداد محصول */
+  padding: 6px 16px;
+  font-size: 16px;
+  min-width: 44px;
+  text-align: center;
+  color: var(--coffee-dark);
+  font-weight: 800;
+}
+
+/* قیمت هر آیتم */
+.cart-item > span:last-child { /* فرض بر اینکه این تگ مربوط به قیمت است */
+  font-weight: 900;
+  color: var(--coffee-green); /* قیمت با رنگ سبز */
+  min-width: 120px;
+  text-align: left;
+}
+
+/* دکمه حذف */
+.cart-item .delete-button {
+  background-color: #b42318; /* همچنان قرمز برای حذف */
+  color: #fff;
+
+  border: 0;
+  border-radius: 12px;
+
+  padding: 9px 13px;
+  cursor: pointer;
+  font-size: 13px;
+
+  margin-left: 10px;
+  transition: transform 0.15s ease, filter 0.15s ease, background-color 0.15s ease;
+}
+
+.cart-item .delete-button:hover {
+  background-color: #9f1d14;
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+/* جمع کل */
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 22px;
+  padding-top: 16px;
+
+  border-top: 2px solid rgba(88, 129, 87, 0.25); /* خط سبز */
+
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--coffee-dark);
+}
+
+.cart-total strong {
+  color: var(--coffee-green-accent); /* جمع کل با سبز */
+}
+
+
+/* پالت رنگی اصلی */
+:root {
+    --coffee-brown: #6f4e37; /* قهوه‌ای اصلی */
+    --coffee-cream: #f5eadd; /* کرم */
+    --coffee-green-accent: #588157; /* سبز تیره برگ درختی */
+    --text-color: #333; /* رنگ متن اصلی */
+    --input-border-color: #ccc;
+    --button-hover-bg: #4a6d4a; /* سبز تیره‌تر برای هاور دکمه */
+}
+
+/* استایل‌های عمومی */
+body {
+    font-family: 'IRANSans', Tahoma, sans-serif;
+    background-color: var(--coffee-cream);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    direction: rtl; /* برای زبان فارسی */
+}
+
+h1, h2, h3 {
+    color: var(--coffee-brown);
+}
+
+a {
+    color: var(--coffee-green-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--button-hover-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* استایل‌های سبد خرید */
+.shopping-cart {
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-left: 15px;
+    border-radius: 4px;
+}
+
+.cart-item-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    color: var(--coffee-brown);
+}
+
+.cart-item-details p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.cart-item-price {
+    font-weight: bold;
+    margin-left: auto; /* قرار دادن قیمت در سمت راست */
+    color: var(--coffee-brown);
+}
+
+.cart-empty {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2em;
+    color: #888;
+}
+
+.cart-total {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid var(--coffee-brown);
+    text-align: right; /* راست چین کردن مجموع کل */
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--coffee-brown);
+}
+
+/* مجموع کل با رنگ سبز برگ درختی */
+.cart-total span:last-child {
+    color: var(--coffee-green-accent);
+    margin-right: 10px;
+}
+
+.cart-main-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--coffee-green-accent);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.cart-main-btn:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* کلاس .pb با رنگ سبز برگ درختی و عرض ۱۰۰۰ پیکسل */
+.pb {
+    color: white; /* متن سفید برای خوانایی بهتر روی پس‌زمینه سبز */
+    background-color: var(--coffee-green-accent);
+    width: 1000px;
+    height: 50px; /* ارتفاع دلخواه */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* وسط چین کردن محتوا */
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 20px auto; /* برای وسط چین کردن بلاک */
+}
+
+/* استایل‌های صفحه‌بندی */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.pagination a, .pagination span {
+    display: block;
+    padding: 8px 15px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    color: var(--coffee-brown);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: var(--coffee-brown);
+    color: white;
+}
+
+.pagination .bt-next, .pagination .bt-back {
+    background-color: var(--coffee-green-accent);
+    color: white;
+    border-color: var(--coffee-green-accent);
+}
+
+.pagination .bt-next:hover, .pagination .bt-back:hover {
+    background-color: var(--button-hover-bg);
+    border-color: var(--button-hover-bg);
+}
+
+/* استایل‌های فرم‌های لاگین و وریفای */
+.login-form-container, .verify-form-container {
+    font-family: 'IRANSans', Tahoma, sans-serif; /* فونت اصلاح شده */
+    background-color: var(--coffee-cream);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    margin: 40px auto;
+}
+
+.login-step-card, .verify-step-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-step-card h2, .verify-step-card h2 {
+    color: var(--coffee-brown);
+    margin-bottom: 20px;
+}
+
+
+
+/* فرم تأیید */
+.verify-title {
+    /* استایل عنوان */
+    font-size: 24px;
+    color: #36220f; /* قهوه ای تیره */
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.phone-info {
+    /* استایل اطلاعات شماره تلفن */
+    font-size: 16px;
+    color: #6f4e37; /* قهوه ای متوسط */
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.verify-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0; /* کرم روشن */
+    border-radius: 8px;
+    font-size: 16px;
+    letter-spacing: 4px; /* فاصله بین اعداد کد */
+    text-align: center;
+    box-sizing: border-box; /* برای اطمینان از اینکه padding و border در عرض 100% لحاظ می شوند */
+    color: #36220f; /* قهوه ای تیره */
+}
+
+.verify-input:focus {
+    border-color: #588157; /* سبز تیره */
+    outline: none; /* حذف خط دور فوکوس پیش فرض */
+    box-shadow: 0 0 0 2px rgba(88, 129, 87, 0.3); /* سایه ملایم سبز */
+}
+
+.verify-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; /* سفید */
+    background-color: #588157; /* سبز تیره */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.verify-button:not(:disabled):hover {
+    background-color: #36220f; /* قهوه ای تیره */
+}
+
+.verify-button:disabled {
+    background-color: #a0a0a0; /* خاکستری */
+    cursor: not-allowed;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: #6f4e37; /* قهوه ای متوسط */
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 5px 10px;
+}
+
+.message {
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    color: #ffffff; /* متن سفید */
+}
+
+.message.success {
+    background-color: #2ecc71; /* سبز موفقیت */
+}
+
+.message.error {
+    background-color: #e74c3c; /* قرمز خطا */
+}
+
+/* استایل های عمومی یا اصلاح شده */
+.log-bt {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #ffffff; /* سفید */
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f5eadd; /* کرم */
+}
+
+.login-info {
+    position: fixed;
+    top: 20px;
+    left: 20px; /* تنظیم موقعیت */
+    background-color: rgba(255, 255, 255, 0.7); /* پس زمینه نیمه شفاف سفید */
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.img-log {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #f56d1e; /* نارنجی - اگر میخواهید این را هم تغییر دهید، بفرمایید */
+    animation: pulse 2s infinite;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.img-log:hover {
+    transform: scale(1.1);
+}
+
+/* استایل عمومی دکمه ها - برای دکمه هایی که کلاس verify-button یا back-button ندارند */
+button {
+    font-family: 'IRANSans', Tahoma, sans-serif; /* فونت */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff; /* متن سفید */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(to right, #8b4513, #a0522d); /* گرادیان قهوه ای */
+}
+
+button:hover {
+    background-image: linear-gradient(to right, #6f4e37, #8b4513); /* قهوه ای تیره تر */
+    transform: translateY(-2px); /* حرکت رو به بالا */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* انیمیشن ها */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(245, 109, 30, 0.7); /* نارنجی */
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(245, 109, 30, 0); /* نارنجی */
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(245, 109, 30, 0); /* نارنجی */
+    }
+}
+
+/* فونت فارسی */
+@font-face {
+  font-family: 'IRANSans';
+  src: url('path/to/your/IRANSans.woff2') format('woff2'),
+       url('path/to/your/IRANSans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* ===== ساختار کلی صفحه ===== */
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  padding: 30px 25px;
+  font-family: "Vazirmatn", sans-serif;
+  direction: rtl;
+}
+
+/* ===== فرم و گروه‌های آن ===== */
+.form-group {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* ===== ورودی‌ها ===== */
+.login-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
+}
+
+.login-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* ===== دکمه‌ها ===== */
+.login-button,
+.resend-code-button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.login-button:disabled,
+.resend-code-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-button:hover:not(:disabled),
+.resend-code-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* ===== دکمه ارسال مجدد کد ===== */
+.resend-code-button {
+  background-color: #f1f1f1;
+  color: #333;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+}
+
+/* ===== فرم پروفایل ===== */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== آپلود تصویر ===== */
+.image-upload-label {
+  display: block;
+  background-color: #f2f2f2;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  color: #555;
+  transition: background-color 0.2s;
+}
+
+.image-upload-label:hover {
+  background-color: #e8e8e8;
+}
+
+/* مخفی کردن input اصلی فایل */
+.file-input {
+  display: none;
+}
+
+/* ===== پیش‌نمایش تصویر ===== */
+.profile-image-preview {
+  margin-top: 10px;
+  text-align: center;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px dashed #ccc;
+}
+
+.profile-image-preview img {
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+/* ===== حالت لودینگ ===== */
+.login-button[disabled]::after {
+  content: ' ⏳';
+}
+
+/* ===== واکنش‌گرا ===== */
+@media (max-width: 450px) {
+  .login-container {
+    padding: 20px;
+    margin: 20px;
+  }
+}

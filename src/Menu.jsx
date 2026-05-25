@@ -73,11 +73,12 @@ const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
     return (
       <div>
       <div className="mbt">
+
         <h2
           id="mm"
         
         >
-          منوی کافه
+          منوی کافه  بار
         </h2>
         </div>
 

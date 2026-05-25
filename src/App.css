@@ -17,9 +17,9 @@
   /* فیلتر گرم بوهو */
   filter: brightness(0.93) contrast(1.05) saturate(0.85);
 
-  /* لایه بافت بوهو */
   position: relative;
 }
+/**/
 
 .bg-c::after {
   content: "";
